@@ -22,10 +22,10 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@k0#p3kidu)yaaa3u1hplxz)f@^6xiy384*(+n@@s5x#1bx@m5'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 ALLOWED_HOSTS = ['http://127.0.0.1/:8001','lxp.nubeera.com','*']
 
 
@@ -141,13 +141,7 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'apikey' # this email will be used to send emails
-EMAIL_HOST_PASSWORD = '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' # host email password required
-# now sign in with your host gmail account in your browser
-# open following link and turn it ON
-# https://myaccount.google.com/lesssecureapps
-# otherwise you will get SMTPAuthenticationError at /contactus
-# this process is required because google blocks apps authentication by default
+
 EMAIL_RECEIVING_USER = ['info@nubeera.com'] # email on which you will receive messages sent from website
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -159,22 +153,12 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
-# # ##########                  Dev
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '709424261438-iq2t80mcempggouuh8t9os1afuhq2h3l.apps.googleusercontent.com'
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
-##########                  Prod
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '699466001074-pt71tbhqafb6pfe4p3247mtp6cktc1sl.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
    'https://www.googleapis.com/auth/userinfo.email',
    'https://www.googleapis.com/auth/userinfo.profile',
 ]
-AWS_BUCKET_NAME='bkt-test-08nov'
-AWS_ACCESS_KEY='AKIATZQFG2PZIUPD23GA'
-AWS_SECRET_ACCESS_KEY='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'
-AWS_DOMAIN='http://bkt-test-08nov.s3.amazonaws.com/'
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
         messages.INFO: 'alert-info',
@@ -183,6 +167,5 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
 }
 
-GITHUB_ACCESS_TOKEN = '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'
 GITHUB_REPO_OWNER = 'teamnubeera'
 GITHUB_REPO_NAME = 'LXP_Video_docs'
